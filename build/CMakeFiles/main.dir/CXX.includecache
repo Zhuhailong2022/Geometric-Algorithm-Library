@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/polygonArea.h
+iostream
+-
+vector
+-
+cmath
+-
+stdexcept
+-
+
+/home/zhl/cg/src/main.cpp
+iostream
+-
+vector
+-
+polygonArea.h
+-
+
