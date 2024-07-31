@@ -7,6 +7,9 @@ CMakeFiles/dynamicLibrary.dir/src/LineSegmentIntersection.cpp.o: ../src/LineSegm
 CMakeFiles/dynamicLibrary.dir/src/PointInPolygon.cpp.o: ../include/PointInPolygon.h
 CMakeFiles/dynamicLibrary.dir/src/PointInPolygon.cpp.o: ../src/PointInPolygon.cpp
 
+CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.o: ../include/ScaningLineAlgorythm.h
+CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.o: ../src/ScaningLineAlgorythm.cpp
+
 CMakeFiles/dynamicLibrary.dir/src/convex_hull.cpp.o: ../include/convex_hull.h
 CMakeFiles/dynamicLibrary.dir/src/convex_hull.cpp.o: ../src/convex_hull.cpp
 
@@ -16,7 +19,7 @@ CMakeFiles/dynamicLibrary.dir/src/delaunay.cpp.o: ../src/delaunay.cpp
 CMakeFiles/dynamicLibrary.dir/src/findIntersection.cpp.o: ../include/findIntersection.h
 CMakeFiles/dynamicLibrary.dir/src/findIntersection.cpp.o: ../src/findIntersection.cpp
 
-CMakeFiles/dynamicLibrary.dir/src/main.cpp.o: ../include/polygonArea.h
+CMakeFiles/dynamicLibrary.dir/src/main.cpp.o: ../include/convex_hull.h
 CMakeFiles/dynamicLibrary.dir/src/main.cpp.o: ../src/main.cpp
 
 CMakeFiles/dynamicLibrary.dir/src/point_line.cpp.o: ../include/point_line.h

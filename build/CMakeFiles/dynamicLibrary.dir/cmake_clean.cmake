@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "../lib/libdynamicLibrary.so"
   "CMakeFiles/dynamicLibrary.dir/src/LineSegmentIntersection.cpp.o"
   "CMakeFiles/dynamicLibrary.dir/src/PointInPolygon.cpp.o"
+  "CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.o"
   "CMakeFiles/dynamicLibrary.dir/src/convex_hull.cpp.o"
   "CMakeFiles/dynamicLibrary.dir/src/delaunay.cpp.o"
   "CMakeFiles/dynamicLibrary.dir/src/findIntersection.cpp.o"

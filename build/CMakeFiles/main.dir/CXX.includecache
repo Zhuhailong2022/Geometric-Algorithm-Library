@@ -6,21 +6,15 @@
 
 #IncludeRegexTransform: 
 
-../include/polygonArea.h
-iostream
--
+../include/convex_hull.h
 vector
--
-cmath
--
-stdexcept
 -
 
 /home/zhl/cg/src/main.cpp
+SFML/Graphics.hpp
+-
+convex_hull.h
+/home/zhl/cg/src/convex_hull.h
 iostream
--
-vector
--
-polygonArea.h
 -
 

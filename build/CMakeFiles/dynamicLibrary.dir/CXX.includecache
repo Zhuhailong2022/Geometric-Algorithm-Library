@@ -14,6 +14,16 @@ vector
 iostream
 -
 
+../include/ScaningLineAlgorythm.h
+iostream
+-
+vector
+-
+algorithm
+-
+set
+-
+
 ../include/convex_hull.h
 vector
 -
@@ -60,6 +70,10 @@ cmath
 algorithm
 -
 
+/home/zhl/cg/src/ScaningLineAlgorythm.cpp
+ScaningLineAlgorythm.h
+/home/zhl/cg/src/ScaningLineAlgorythm.h
+
 /home/zhl/cg/src/convex_hull.cpp
 convex_hull.h
 /home/zhl/cg/src/convex_hull.h
@@ -83,11 +97,11 @@ findIntersection.h
 /home/zhl/cg/src/findIntersection.h
 
 /home/zhl/cg/src/main.cpp
+SFML/Graphics.hpp
+-
+convex_hull.h
+/home/zhl/cg/src/convex_hull.h
 iostream
--
-vector
--
-polygonArea.h
 -
 
 /home/zhl/cg/src/point_line.cpp

@@ -1,9 +1,11 @@
+//Delaunay 三角剖分算法测试
+
 // #include <SFML/Graphics.hpp>
 // #include "delaunay.h"
 // #include <vector>
 
 // int main() {
-//     // 定义 20 个点
+//     // 定义 26 个点
 //     Point points[] = {
 //         Point(100, 100, 0), Point(200, 100, 1), Point(300, 100, 2),
 //         Point(400, 100, 3), Point(500, 100, 4), Point(150, 200, 5),
@@ -11,16 +13,18 @@
 //         Point(550, 200, 9), Point(100, 300, 10), Point(200, 300, 11),
 //         Point(300, 300, 12), Point(400, 300, 13), Point(500, 300, 14),
 //         Point(150, 400, 15), Point(250, 400, 16), Point(350, 400, 17),
-//         Point(450, 400, 18), Point(550, 400, 19)
+//         Point(450, 400, 18), Point(550, 400, 19), Point(1000, 500, 20),
+//         Point(200, 500, 21), Point(300, 500, 22), Point(400, 500, 23),
+//         Point(500, 500, 24), Point(150, 600, 25)
 //     };
-//     int n = 20;
+//     int n = 26;
 
 //     // 创建 Delaunay 对象并初始化
 //     Delaunay dt;
 //     dt.init(n, points);
 
 //     // 使用 SFML 绘制
-//     sf::RenderWindow window(sf::VideoMode(800, 600), "Delaunay Triangulation");
+//     sf::RenderWindow window(sf::VideoMode(5000, 5000), "Delaunay Triangulation");
 
 //     while (window.isOpen()) {
 //         sf::Event event;
@@ -54,84 +58,85 @@
 //     return 0;
 // }
 
+//Graham 扫描法求凸包算法测试
 
-// #include <SFML/Graphics.hpp>
-// #include <iostream>
-// #include <vector>
-// #include "convex_hull.h" // 确保这个头文件提供了 Point 结构体和 ConvexHull 类
+#include <SFML/Graphics.hpp>
+#include "convex_hull.h"
+#include <iostream>
 
-// int main() {
-//     // 原始点集合
-//     std::vector<Point> points = {{0, 0}, {1, 1}, {2, 2}, {3, 1}, {0, 3},{4, 2}, {5, 3}, {6, 1}};
-//     std::cout << "原始点：\n";
-//     for (const auto& p : points) {
-//         std::cout << "(" << p.x << ", " << p.y << ")\n";
-//     }
+int main() {
+    // 原始点集合
+    std::vector<Point> points = {{0, 0}, {1, 1}, {2, 2}, {3, 1}, {0, 3}, {4, 2}, {5, 3}, {6, 1}};
+    std::cout << "原始点：\n";
+    for (const auto& p : points) {
+        std::cout << "(" << p.x << ", " << p.y << ")\n";
+    }
 
-//     // 计算凸包
-//     std::vector<Point> hull = ConvexHull::grahamScan(points);
+    // 计算凸包
+    std::vector<Point> hull = ConvexHull::grahamScan(points);
 
-//     std::cout << "凸包点：\n";
-//     for (const auto& p : hull) {
-//         std::cout << "(" << p.x << ", " << p.y << ")\n";
-//     }
+    std::cout << "凸包点：\n";
+    for (const auto& p : hull) {
+        std::cout << "(" << p.x << ", " << p.y << ")\n";
+    }
 
-//     // 创建窗口
-//     sf::RenderWindow window(sf::VideoMode(1600, 1200), "Convex Hull");
+    // 创建窗口
+    sf::RenderWindow window(sf::VideoMode(400, 400), "Convex Hull");
 
-//     // 创建 VertexArray 用于绘制
-//     sf::VertexArray vertices(sf::LineStrip);
+    // 创建 VertexArray 用于绘制
+    sf::VertexArray vertices(sf::LineStrip);
 
-//     // 计算所有点的范围
-//     double minX = std::numeric_limits<double>::max();
-//     double maxX = std::numeric_limits<double>::lowest();
-//     double minY = std::numeric_limits<double>::max();
-//     double maxY = std::numeric_limits<double>::lowest();
-    
-//     for (const auto& point : hull) {
-//         if (point.x < minX) minX = point.x;
-//         if (point.x > maxX) maxX = point.x;
-//         if (point.y < minY) minY = point.y;
-//         if (point.y > maxY) maxY = point.y;
-//     }
+    // 计算所有点的范围
+    double minX = std::numeric_limits<double>::max();
+    double maxX = std::numeric_limits<double>::lowest();
+    double minY = std::numeric_limits<double>::max();
+    double maxY = std::numeric_limits<double>::lowest();
 
-//     // 确定缩放因子
-//     double scaleX = window.getSize().x / (maxX - minX);
-//     double scaleY = window.getSize().y / (maxY - minY);
-//     double scale = std::min(scaleX, scaleY); // 选择较小的缩放因子以保持图形比例
+    for (const auto& point : hull) {
+        if (point.x < minX) minX = point.x;
+        if (point.x > maxX) maxX = point.x;
+        if (point.y < minY) minY = point.y;
+        if (point.y > maxY) maxY = point.y;
+    }
 
-//     // 计算窗口的中心
-//     double offsetX = (window.getSize().x - (maxX - minX) * scale) / 2;
-//     double offsetY = (window.getSize().y - (maxY - minY) * scale) / 2;
+    // 确定缩放因子
+    double scaleX = (window.getSize().x - 20) / (maxX - minX); // 留出边距
+    double scaleY = (window.getSize().y - 20) / (maxY - minY); // 留出边距
+    double scale = std::min(scaleX, scaleY); // 选择较小的缩放因子以保持图形比例
 
-//     // 转换点到 SFML 窗口坐标系
-//     for (const auto& point : hull) {
-//         sf::Vector2f screenPoint((point.x - minX) * scale + offsetX, window.getSize().y - (point.y - minY) * scale - offsetY);
-//         vertices.append(sf::Vertex(screenPoint, sf::Color::Green));
-//     }
+    // 计算窗口的中心偏移量
+    double offsetX = 10; // 从边缘留出10像素的偏移量
+    double offsetY = 10; // 从边缘留出10像素的偏移量
 
-//     // 闭合多边形
-//     if (!hull.empty()) {
-//         sf::Vector2f screenPoint((hull.front().x - minX) * scale + offsetX, window.getSize().y - (hull.front().y - minY) * scale - offsetY);
-//         vertices.append(sf::Vertex(screenPoint, sf::Color::Green));
-//     }
+    // 转换点到 SFML 窗口坐标系
+    for (const auto& point : hull) {
+        sf::Vector2f screenPoint((point.x - minX) * scale + offsetX, window.getSize().y - (point.y - minY) * scale - offsetY);
+        vertices.append(sf::Vertex(screenPoint, sf::Color::Green));
+    }
 
-//     // 主循环
-//     while (window.isOpen()) {
-//         sf::Event event;
-//         while (window.pollEvent(event)) {
-//             if (event.type == sf::Event::Closed) {
-//                 window.close();
-//             }
-//         }
+    // 闭合多边形
+    if (!hull.empty()) {
+        sf::Vector2f screenPoint((hull.front().x - minX) * scale + offsetX, window.getSize().y - (hull.front().y - minY) * scale - offsetY);
+        vertices.append(sf::Vertex(screenPoint, sf::Color::Green));
+    }
 
-//         window.clear();
-//         window.draw(vertices);
-//         window.display();
-//     }
+    // 主循环
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                window.close();
+            }
+        }
 
-//     return 0;
-// }
+        window.clear();
+        window.draw(vertices);
+        window.display();
+    }
+
+    return 0;
+}
+
 
 
 
@@ -142,13 +147,14 @@
 // int main() {
 //     Point P = {0, 0};
 //     Point Q = {1, 1};
-//     Vector v = {1, 0}; // x轴方向的单位向量
+//     Vector v = {1, 0}; 
 
 //     std::cout << determinePosition(P, Q, v) << std::endl;
 
 //     return 0;
 // }
 
+//判断线段是否相交算法测试
 
 // #include <iostream>
 // #include "LineSegmentIntersection.h"
@@ -195,6 +201,7 @@
 //     return 0;
 // }
 
+//点与多边形位置关系判断程序
 
 // #include <iostream>
 // #include <vector>
@@ -239,7 +246,7 @@
 
 
 
-//测试求交点程序
+//测试线段求求交点程序
 // #include "findIntersection.h"
 
 // int main() {
@@ -261,25 +268,42 @@
 
 //测试面积计算程序
 
+// #include <iostream>
+// #include <vector>
+// #include <polygonArea.h>
+// // 测试程序
+// int main() {
+//         // 定义一个多边形
+//         std::vector<_Point> polygon = {
+//             {0, 0}, {4, 0}, {4, 4}, {0, 4}
+//         };
 
-#include <iostream>
-#include <vector>
-#include <polygonArea.h>
-// 测试程序
-int main() {
-        // 定义一个多边形
-        std::vector<_Point> polygon = {
-            {0, 0}, {4, 0}, {4, 4}, {0, 4}
-        };
+//         // 确保 polygon 的大小正确
+//         std::cout << "Polygon vertices size: " << polygon.size() << std::endl;
 
-        // 确保 polygon 的大小正确
-        std::cout << "Polygon vertices size: " << polygon.size() << std::endl;
+//         // 计算面积
+//         double area = polygonArea(polygon);
 
-        // 计算面积
-        double area = polygonArea(polygon);
+//         // 输出结果
+//         std::cout << "The area of the polygon is: " << area << std::endl;
 
-        // 输出结果
-        std::cout << "The area of the polygon is: " << area << std::endl;
+//     return 0;
+// }
 
-    return 0;
-}
+
+//扫描线算法求面积测试
+// #include "ScaningLineAlgorythm.h"
+// int main() {
+//     std::vector<Rectangle> rectangles = {
+//         {1, 1, 3, 3},
+//         {2, 2, 5, 5},
+//         {6, 1, 8, 3},
+//         {1, 4, 3, 6},
+//         {4, 5, 7, 8},
+//     };
+
+//     int area = calculateArea(rectangles);
+//     std::cout << "Total area covered by rectangles: " << area << std::endl;
+
+//     return 0;
+// }

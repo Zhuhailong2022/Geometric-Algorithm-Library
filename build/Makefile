@@ -190,6 +190,33 @@ src/PointInPolygon.cpp.s:
 	$(MAKE) -f CMakeFiles/dynamicLibrary.dir/build.make CMakeFiles/dynamicLibrary.dir/src/PointInPolygon.cpp.s
 .PHONY : src/PointInPolygon.cpp.s
 
+src/ScaningLineAlgorythm.o: src/ScaningLineAlgorythm.cpp.o
+
+.PHONY : src/ScaningLineAlgorythm.o
+
+# target to build an object file
+src/ScaningLineAlgorythm.cpp.o:
+	$(MAKE) -f CMakeFiles/dynamicLibrary.dir/build.make CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.o
+.PHONY : src/ScaningLineAlgorythm.cpp.o
+
+src/ScaningLineAlgorythm.i: src/ScaningLineAlgorythm.cpp.i
+
+.PHONY : src/ScaningLineAlgorythm.i
+
+# target to preprocess a source file
+src/ScaningLineAlgorythm.cpp.i:
+	$(MAKE) -f CMakeFiles/dynamicLibrary.dir/build.make CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.i
+.PHONY : src/ScaningLineAlgorythm.cpp.i
+
+src/ScaningLineAlgorythm.s: src/ScaningLineAlgorythm.cpp.s
+
+.PHONY : src/ScaningLineAlgorythm.s
+
+# target to generate assembly for a file
+src/ScaningLineAlgorythm.cpp.s:
+	$(MAKE) -f CMakeFiles/dynamicLibrary.dir/build.make CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.s
+.PHONY : src/ScaningLineAlgorythm.cpp.s
+
 src/convex_hull.o: src/convex_hull.cpp.o
 
 .PHONY : src/convex_hull.o
@@ -371,6 +398,9 @@ help:
 	@echo "... src/PointInPolygon.o"
 	@echo "... src/PointInPolygon.i"
 	@echo "... src/PointInPolygon.s"
+	@echo "... src/ScaningLineAlgorythm.o"
+	@echo "... src/ScaningLineAlgorythm.i"
+	@echo "... src/ScaningLineAlgorythm.s"
 	@echo "... src/convex_hull.o"
 	@echo "... src/convex_hull.i"
 	@echo "... src/convex_hull.s"

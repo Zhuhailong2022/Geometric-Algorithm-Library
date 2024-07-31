@@ -83,9 +83,22 @@ CMakeFiles/dynamicLibrary.dir/src/PointInPolygon.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dynamicLibrary.dir/src/PointInPolygon.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhl/cg/src/PointInPolygon.cpp -o CMakeFiles/dynamicLibrary.dir/src/PointInPolygon.cpp.s
 
+CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.o: CMakeFiles/dynamicLibrary.dir/flags.make
+CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.o: ../src/ScaningLineAlgorythm.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.o -c /home/zhl/cg/src/ScaningLineAlgorythm.cpp
+
+CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhl/cg/src/ScaningLineAlgorythm.cpp > CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.i
+
+CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhl/cg/src/ScaningLineAlgorythm.cpp -o CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.s
+
 CMakeFiles/dynamicLibrary.dir/src/convex_hull.cpp.o: CMakeFiles/dynamicLibrary.dir/flags.make
 CMakeFiles/dynamicLibrary.dir/src/convex_hull.cpp.o: ../src/convex_hull.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/dynamicLibrary.dir/src/convex_hull.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/dynamicLibrary.dir/src/convex_hull.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dynamicLibrary.dir/src/convex_hull.cpp.o -c /home/zhl/cg/src/convex_hull.cpp
 
 CMakeFiles/dynamicLibrary.dir/src/convex_hull.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/dynamicLibrary.dir/src/convex_hull.cpp.s: cmake_force
 
 CMakeFiles/dynamicLibrary.dir/src/delaunay.cpp.o: CMakeFiles/dynamicLibrary.dir/flags.make
 CMakeFiles/dynamicLibrary.dir/src/delaunay.cpp.o: ../src/delaunay.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/dynamicLibrary.dir/src/delaunay.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/dynamicLibrary.dir/src/delaunay.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dynamicLibrary.dir/src/delaunay.cpp.o -c /home/zhl/cg/src/delaunay.cpp
 
 CMakeFiles/dynamicLibrary.dir/src/delaunay.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/dynamicLibrary.dir/src/delaunay.cpp.s: cmake_force
 
 CMakeFiles/dynamicLibrary.dir/src/findIntersection.cpp.o: CMakeFiles/dynamicLibrary.dir/flags.make
 CMakeFiles/dynamicLibrary.dir/src/findIntersection.cpp.o: ../src/findIntersection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/dynamicLibrary.dir/src/findIntersection.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/dynamicLibrary.dir/src/findIntersection.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dynamicLibrary.dir/src/findIntersection.cpp.o -c /home/zhl/cg/src/findIntersection.cpp
 
 CMakeFiles/dynamicLibrary.dir/src/findIntersection.cpp.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/dynamicLibrary.dir/src/findIntersection.cpp.s: cmake_force
 
 CMakeFiles/dynamicLibrary.dir/src/main.cpp.o: CMakeFiles/dynamicLibrary.dir/flags.make
 CMakeFiles/dynamicLibrary.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/dynamicLibrary.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/dynamicLibrary.dir/src/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dynamicLibrary.dir/src/main.cpp.o -c /home/zhl/cg/src/main.cpp
 
 CMakeFiles/dynamicLibrary.dir/src/main.cpp.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/dynamicLibrary.dir/src/main.cpp.s: cmake_force
 
 CMakeFiles/dynamicLibrary.dir/src/point_line.cpp.o: CMakeFiles/dynamicLibrary.dir/flags.make
 CMakeFiles/dynamicLibrary.dir/src/point_line.cpp.o: ../src/point_line.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/dynamicLibrary.dir/src/point_line.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/dynamicLibrary.dir/src/point_line.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dynamicLibrary.dir/src/point_line.cpp.o -c /home/zhl/cg/src/point_line.cpp
 
 CMakeFiles/dynamicLibrary.dir/src/point_line.cpp.i: cmake_force
@@ -150,7 +163,7 @@ CMakeFiles/dynamicLibrary.dir/src/point_line.cpp.s: cmake_force
 
 CMakeFiles/dynamicLibrary.dir/src/polygonArea.cpp.o: CMakeFiles/dynamicLibrary.dir/flags.make
 CMakeFiles/dynamicLibrary.dir/src/polygonArea.cpp.o: ../src/polygonArea.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/dynamicLibrary.dir/src/polygonArea.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/dynamicLibrary.dir/src/polygonArea.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dynamicLibrary.dir/src/polygonArea.cpp.o -c /home/zhl/cg/src/polygonArea.cpp
 
 CMakeFiles/dynamicLibrary.dir/src/polygonArea.cpp.i: cmake_force
@@ -165,6 +178,7 @@ CMakeFiles/dynamicLibrary.dir/src/polygonArea.cpp.s: cmake_force
 dynamicLibrary_OBJECTS = \
 "CMakeFiles/dynamicLibrary.dir/src/LineSegmentIntersection.cpp.o" \
 "CMakeFiles/dynamicLibrary.dir/src/PointInPolygon.cpp.o" \
+"CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.o" \
 "CMakeFiles/dynamicLibrary.dir/src/convex_hull.cpp.o" \
 "CMakeFiles/dynamicLibrary.dir/src/delaunay.cpp.o" \
 "CMakeFiles/dynamicLibrary.dir/src/findIntersection.cpp.o" \
@@ -177,6 +191,7 @@ dynamicLibrary_EXTERNAL_OBJECTS =
 
 ../lib/libdynamicLibrary.so: CMakeFiles/dynamicLibrary.dir/src/LineSegmentIntersection.cpp.o
 ../lib/libdynamicLibrary.so: CMakeFiles/dynamicLibrary.dir/src/PointInPolygon.cpp.o
+../lib/libdynamicLibrary.so: CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.o
 ../lib/libdynamicLibrary.so: CMakeFiles/dynamicLibrary.dir/src/convex_hull.cpp.o
 ../lib/libdynamicLibrary.so: CMakeFiles/dynamicLibrary.dir/src/delaunay.cpp.o
 ../lib/libdynamicLibrary.so: CMakeFiles/dynamicLibrary.dir/src/findIntersection.cpp.o
@@ -185,7 +200,7 @@ dynamicLibrary_EXTERNAL_OBJECTS =
 ../lib/libdynamicLibrary.so: CMakeFiles/dynamicLibrary.dir/src/polygonArea.cpp.o
 ../lib/libdynamicLibrary.so: CMakeFiles/dynamicLibrary.dir/build.make
 ../lib/libdynamicLibrary.so: CMakeFiles/dynamicLibrary.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library ../lib/libdynamicLibrary.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zhl/cg/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX shared library ../lib/libdynamicLibrary.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dynamicLibrary.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

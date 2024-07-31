@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/zhl/cg/src/LineSegmentIntersection.cpp" "/home/zhl/cg/build/CMakeFiles/dynamicLibrary.dir/src/LineSegmentIntersection.cpp.o"
   "/home/zhl/cg/src/PointInPolygon.cpp" "/home/zhl/cg/build/CMakeFiles/dynamicLibrary.dir/src/PointInPolygon.cpp.o"
+  "/home/zhl/cg/src/ScaningLineAlgorythm.cpp" "/home/zhl/cg/build/CMakeFiles/dynamicLibrary.dir/src/ScaningLineAlgorythm.cpp.o"
   "/home/zhl/cg/src/convex_hull.cpp" "/home/zhl/cg/build/CMakeFiles/dynamicLibrary.dir/src/convex_hull.cpp.o"
   "/home/zhl/cg/src/delaunay.cpp" "/home/zhl/cg/build/CMakeFiles/dynamicLibrary.dir/src/delaunay.cpp.o"
   "/home/zhl/cg/src/findIntersection.cpp" "/home/zhl/cg/build/CMakeFiles/dynamicLibrary.dir/src/findIntersection.cpp.o"
