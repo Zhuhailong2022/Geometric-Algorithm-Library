@@ -374,10 +374,6 @@ chmod +x setup.sh
 
 给定两个顶点 `pi 和 pi+1`，以及辅助点 O，三角形的面积为：
 
----
-markdown: kramdown
----
-
 $$
 Area_ 
 i
