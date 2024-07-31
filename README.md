@@ -911,7 +911,7 @@ DT 有很多种构造算法，分治算法是最易于理解和实现的。
     #endif // SCANNING_LINE_ALGORITHM_H
     ```
   - ScaningLineAlgorythm.cpp文件
-  - ```
+  - ```c++
     #include "ScaningLineAlgorythm.h"
 
     // 比较事件的 x 坐标，按从小到大排序
