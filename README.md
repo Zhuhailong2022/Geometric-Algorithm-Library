@@ -1024,7 +1024,7 @@ DT 有很多种构造算法，分治算法是最易于理解和实现的。
 
 Graham 扫描法求凸包
 
-- Graham 扫描法的时间复杂度为 ![O(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)，复杂度瓶颈也在于对所有点排序。
+- Graham 扫描法的时间复杂度为 nlogn ，复杂度瓶颈也在于对所有点排序。
 - 实现思路：
 
   - 首先找到所有点中，纵坐标最小的一个点 P。根据凸包的定义我们知道，这个点一定在凸包上。然后将所有的点以相对于点 P 的极角大小为关键字进行排序。
