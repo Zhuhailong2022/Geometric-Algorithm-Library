@@ -970,7 +970,7 @@ DT 有很多种构造算法，分治算法是最易于理解和实现的。
 
 ### 定义
 
-- 凸多边形，是指所有内角大小都在[0,180°]范围内的**简单多边形**
+- 凸多边形，是指所有内角大小都在[0,180]范围内的**简单多边形**
 - 凸包，在平面上能包含所有给定点的最小凸多边形叫凸包。数学定义为，对于给定集合 X ，所有包含 X 的凸集的交集 S 被称为 X 的凸包。更形象的比喻是，用一条弹性绳包含所有给定点的形态，弹性绳用最短的周长围住了所有点，这样形成的封闭图形就是凸包。反之，凹多边形围住所有点，它的周长一定不是最小。
 - 如下图所示：
   - ![img](https://oi-wiki.org/geometry/images/ch.png)
@@ -978,18 +978,77 @@ DT 有很多种构造算法，分治算法是最易于理解和实现的。
 ### 性质
 
 - 凸多边形在围住给定点集合的情况下周长是最小的。
-
-Graham 扫描法求凸包
-
-- Graham 扫描法的时间复杂度为 nlogn ，复杂度瓶颈也在于对所有点排序。
-- 实现思路：
-
-  - 首先找到所有点中，纵坐标最小的一个点 P。根据凸包的定义我们知道，这个点一定在凸包上。然后将所有的点以相对于点 P 的极角大小为关键字进行排序。
-  - 从点 P 出发，在凸包上逆时针走，那么我们经过的所有节点一定都是「左拐」的。形式化地说，对于凸包逆时针方向上任意连续经过的三个点 P1,P2,P3，首尾相接向量叉乘一定满足 `P1P2 X P2P3 >= 0`。
-  - 新建一个栈用于存储凸包的信息，先将 P 压入栈中，然后按照极角序依次尝试加入每一个点。如果进栈的点 P0 和栈顶的两个点P1,P2（其中 P1 为栈顶）行进的方向「右拐」了，那么就弹出栈顶的 P1 ，不断重复上述过程直至进栈的点与栈顶的两个点满足条件，或者栈中仅剩下一个元素，再将 P0 压入栈中。
 - 算法实现：
 
-  -
-  - ```
+  - ConvexHull.h文件
+  - ```c++
+    #ifndef CONVEX_HULL_H
+    #define CONVEX_HULL_H
 
+    #include <vector>
+
+    struct Point {
+        double x, y, ang;
+
+        Point operator-(const Point& p) const { return {x - p.x, y - p.y, 0}; }
+    };
+
+    class ConvexHull {
+    public:
+        static std::vector<Point> grahamScan(std::vector<Point>& points);
+    };
+
+    #endif // CONVEX_HULL_H
+    ```
+  - ConvexHull.cpp文件
+  - ```c++
+    #include "convex_hull.h"
+    #include <cmath>
+    #include <algorithm>
+
+    static double dis(const Point& p1, const Point& p2) {
+        return sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
+    }
+
+    static bool cmp(const Point& p1, const Point& p2, const Point& p1_ref) {
+        if (p1.ang == p2.ang) {
+            return dis(p1, p1_ref) < dis(p2, p1_ref);
+        }
+        return p1.ang < p2.ang;
+    }
+
+    static double cross(const Point& p1, const Point& p2) {
+        return p1.x * p2.y - p1.y * p2.x;
+    }
+
+    std::vector<Point> ConvexHull::grahamScan(std::vector<Point>& points) {
+        int n = points.size();
+        if (n <= 1) return points;
+
+        int min_point_idx = 0;
+        for (int i = 1; i < n; ++i) {
+            if (points[i].y < points[min_point_idx].y || (points[i].y == points[min_point_idx].y && points[i].x < points[min_point_idx].x)) {
+                min_point_idx = i;
+            }
+        }
+        std::swap(points[0], points[min_point_idx]);
+
+        Point p1_ref = points[0];
+        for (int i = 1; i < n; ++i) {
+            points[i].ang = atan2(points[i].y - p1_ref.y, points[i].x - p1_ref.x);
+        }
+        std::sort(points.begin() + 1, points.end(), [p1_ref](const Point& p1, const Point& p2) {
+            return cmp(p1, p2, p1_ref);
+        });
+
+        std::vector<Point> hull;
+        hull.push_back(points[0]);
+        for (int i = 1; i < n; ++i) {
+            while (hull.size() >= 2 && cross(points[i] - hull[hull.size() - 2], hull.back() - hull[hull.size() - 2]) <= 0) {
+                hull.pop_back();
+            }
+            hull.push_back(points[i]);
+        }
+        return hull;
+    }
     ```
