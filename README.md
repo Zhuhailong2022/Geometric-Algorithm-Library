@@ -536,8 +536,6 @@ double polygonArea(const std::vector<Point>& vertices) {
 
 ## 三角剖分
 
-视频资源：https://www.bilibili.com/video/BV1QB4y1S7RK/?spm_id_from=333.337.search-card.all.click&vd_source=dd7f3285fe766199a2e191fa8e548a94
-
 ### Delaunay 三角剖分
 
 ### 定义
@@ -805,7 +803,6 @@ DT 有很多种构造算法，分治算法是最易于理解和实现的。
     - 如图所示，我们可以把整个矩形分成如图各个颜色不同的小矩形，那么这个小矩形的高就是我们扫过的距离，那么剩下了一个变量，那就是矩形的长一直在变化。
     - 我们的线段树就是为了维护矩形的长，我们给每一个矩形的上下边进行标记，下面的边标记为 1，上面的边标记为 -1，每遇到一个矩形时，我们知道了标记为 1 的边，我们就加进来这一条矩形的长，等到扫描到 -1 时，证明这一条边需要删除，就删去，利用 1 和  -1 可以轻松的到这种状态。
     - 还要注意这里的线段树指的并不是线段的一个端点，而指的是一个区间，所以我们要计算的是r + 1和r -1。
-    - 视频讲解：https://www.bilibili.com/video/BV144411Z7tx/?spm_id_from=333.337.search-card.all.click&vd_source=dd7f3285fe766199a2e191fa8e548a94
   - 代码实现：
 
   * **ScaningLineAlgorythm.h文件**
